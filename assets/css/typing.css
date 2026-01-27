@@ -1,0 +1,61 @@
+/* assets/css/typing.css */
+/* Typing Hero Section (normal flow, no overlay) */
+
+:root{
+  --masi-blue:#044880;
+  --masi-yellow:#F7C600;
+}
+
+.masi-typing-hero{
+  min-height: 100vh;           /* BIG */
+  background: var(--masi-blue);
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.masi-typing-hero .masi-typing-inner{
+  width: 100%;
+  padding: 6rem 0;             /* EDIT HERE */
+}
+
+.masi-typing-title{
+  margin: 0;
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  font-size: clamp(2.6rem, 5.5vw, 5.8rem);
+  text-align: left;            /* LEFT aligned */
+}
+
+.masi-typing-feature{
+  color: var(--masi-yellow);
+  font-weight: 950;
+  white-space: nowrap;
+}
+
+.masi-typing-cursor{
+  display:inline-block;
+  width:0.12em;
+  height:1em;
+  background: currentColor;
+  margin-left:0.08em;
+  transform: translateY(0.12em);
+  animation: masiBlink 0.9s steps(1,end) infinite;
+}
+
+@keyframes masiBlink{ 50% { opacity: 0; } }
+
+
+/* Reduced top spacing + supporting text */
+.masi-typing-hero{
+  padding-top: 32px; /* reduced */
+}
+
+.masi-typing-lead{
+  margin-top: 22px;
+  max-width: 62ch;
+  color: rgba(255,255,255,.85);
+  font-size: 18px;
+  line-height: 1.6;
+}

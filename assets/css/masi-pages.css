@@ -1,0 +1,169 @@
+/* =========================
+   File: pages.css
+   Project: MASI Static Prototype
+   Purpose: Shared page styling for:
+     - services.html (hub)
+     - service-*.html (detail pages)
+   Depends on: assets/css/style.css (global theme)
+   Notes:
+   - This file is A-to-Z (complete)
+   - Uses the same dark blue + yellow theme
+   ========================= */
+
+/* -------------------------------------------------
+   1) Page Hero (header band)
+   ------------------------------------------------- */
+.page-hero{
+  background: var(--dark-blue, #044880);
+  color: #fff;
+  padding: 40px 0 34px;
+  border-bottom: 3px solid rgba(247,198,0,.35);
+}
+
+.page-title{
+  font-size: 44px;
+  margin: 0 0 10px;
+  letter-spacing: .2px;
+}
+
+.page-subtitle{
+  margin: 0;
+  color: rgba(255,255,255,.9);
+  max-width: 80ch;
+  font-weight: 650;
+}
+
+/* -------------------------------------------------
+   2) Content wrappers
+   ------------------------------------------------- */
+.page-wrap{
+  display: grid;
+  gap: 18px;
+}
+
+.card-panel{
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid rgba(0,0,0,.08);
+  box-shadow: 0 10px 25px rgba(0,0,0,.10);
+  padding: 18px;
+}
+
+.card-title{
+  margin: 0 0 10px;
+  font-size: 20px;
+  letter-spacing: .2px;
+}
+
+.lead{
+  color: rgba(17,24,39,.82);
+  font-weight: 650;
+  margin: 0 0 10px;
+}
+
+/* -------------------------------------------------
+   3) Services hub layout
+   ------------------------------------------------- */
+.services-hub-grid{
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 18px;
+  align-items: start;
+}
+
+.services-hub-left{
+  display: grid;
+  gap: 16px;
+}
+
+.services-hub-right{
+  display: grid;
+  gap: 12px;
+}
+
+/* Slight refinements for the reference-style accordion */
+.svc-item{
+  box-shadow: 0 8px 20px rgba(0,0,0,.08);
+}
+
+.svc-body .btn{
+  margin-top: 6px;
+}
+
+/* -------------------------------------------------
+   4) Service detail layout
+   ------------------------------------------------- */
+.service-detail-grid{
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: 18px;
+  align-items: start;
+}
+
+.service-meta{
+  display: grid;
+  gap: 10px;
+}
+
+.kv{
+  display: grid;
+  gap: 4px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: rgba(4,72,128,.05);
+  border: 1px solid rgba(4,72,128,.14);
+}
+
+.kv-label{
+  font-weight: 900;
+  font-size: 12px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(17,24,39,.66);
+}
+
+.kv-value{
+  font-weight: 800;
+  color: rgba(17,24,39,.92);
+}
+
+.bullets{
+  margin: 0 0 0 18px;
+  color: rgba(17,24,39,.88);
+  font-weight: 650;
+}
+
+.cta{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.cta-note{
+  margin: 0;
+  color: rgba(17,24,39,.70);
+  font-weight: 650;
+}
+
+/* -------------------------------------------------
+   5) Responsive
+   ------------------------------------------------- */
+@media (max-width: 980px){
+  .services-hub-grid{
+    grid-template-columns: 1fr;
+  }
+  .service-detail-grid{
+    grid-template-columns: 1fr;
+  }
+  .page-title{
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 640px){
+  .page-title{
+    font-size: 32px;
+  }
+}

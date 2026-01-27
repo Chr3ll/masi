@@ -1,0 +1,101 @@
+/* assets/css/partners.css */
+/* Partners: CSS Grid + click-to-flip (scoped to this component)
+   - No global selectors (no html/body/row/btn)
+   - Back side has readable text + link
+*/
+
+#partners .partners-grid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 1100px){
+  #partners .partners-grid{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px){
+  #partners .partners-grid{ grid-template-columns: 1fr; }
+}
+
+#partners .partner-card{
+  perspective: 150rem;
+}
+
+#partners .partner-card__inner{
+  position: relative;
+  height: 210px; /* EDIT HERE: card height */
+  border-radius: calc(var(--radius) + 2px);
+  transform-style: preserve-3d;
+  transition: transform .75s ease;
+  cursor: pointer;
+  outline: none;
+}
+
+/* Clicked state */
+#partners .partner-card.is-flipped .partner-card__inner{
+  transform: rotateY(180deg);
+}
+
+#partners .partner-card__side{
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: calc(var(--radius) + 2px);
+  overflow: hidden;
+  box-shadow: 0 12px 26px rgba(0,0,0,.16);
+  border: 1px solid rgba(255,255,255,.20);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+/* Front */
+#partners .partner-card__front{
+  background: rgba(255,255,255,.95);
+}
+
+#partners .partner-card__logo{
+  width: 100%;
+  height: 120px;
+  object-fit: contain;
+}
+
+/* Back */
+#partners .partner-card__back{
+  transform: rotateY(180deg);
+  background: var(--yellow);
+  color: var(--black);
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#partners .partner-card__name{
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+#partners .partner-card__text{
+  margin: 0;
+  color: rgba(0,0,0,.78);
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Link (readable + consistent) */
+#partners .partner-card__more{
+  font-weight: 900;
+  color: var(--dark-blue);
+  border-bottom: 2px solid rgba(4,72,128,.25);
+  padding-bottom: 2px;
+  display: inline-block;
+}
+#partners .partner-card__more:hover{
+  border-bottom-color: rgba(4,72,128,.75);
+}

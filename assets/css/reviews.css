@@ -1,0 +1,177 @@
+/* =========================
+   File: reviews.css
+   Project: MASI Static Prototype
+   Purpose: Reviews page styling + review submission form
+   Depends on:
+     - assets/css/style.css (global theme)
+     - assets/css/pages.css (optional shared page styles)
+   Notes:
+   - A-to-Z complete file
+   ========================= */
+
+/* 1) Review submission panel */
+.review-form{
+  display:grid;
+  gap: 12px;
+}
+
+.review-form .field-row{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.review-form .field{
+  display:grid;
+  gap: 6px;
+}
+
+.review-form .field-label{
+  font-weight: 900;
+  font-size: 12px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: rgba(17,24,39,.68);
+}
+
+.review-form .field-input{
+  width: 100%;
+  padding: 12px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,.12);
+  background: var(--grey, #F2F4F7);
+  font-weight: 650;
+  outline: none;
+}
+
+.review-form .field-input:focus{
+  border-color: rgba(4,72,128,.55);
+  box-shadow: 0 0 0 3px rgba(4,72,128,.12);
+  background: #fff;
+}
+
+.review-form .field-textarea{
+  min-height: 140px;
+  resize: vertical;
+}
+
+.review-form .form-actions{
+  display:flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items:center;
+}
+
+.review-form .note{
+  margin: 0;
+  color: rgba(17,24,39,.70);
+  font-weight: 650;
+}
+
+.review-form .error{
+  margin: 0;
+  color: #B91C1C;
+  font-weight: 850;
+}
+
+/* 2) Review cards list */
+.reviews-grid{
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.review-card{
+  background:#fff;
+  border-radius: 16px;
+  border: 1px solid rgba(0,0,0,.08);
+  box-shadow: 0 10px 25px rgba(0,0,0,.10);
+  padding: 18px;
+  display:flex;
+  flex-direction:column;
+  gap: 10px;
+}
+
+.review-head{
+  display:grid;
+  gap: 4px;
+}
+
+.review-name{
+  font-weight: 950;
+  color: rgba(17,24,39,.94);
+  font-size: 16px;
+}
+
+.review-job{
+  font-weight: 750;
+  color: rgba(17,24,39,.70);
+  font-size: 14px;
+}
+
+.review-time{
+  font-weight: 800;
+  color: rgba(17,24,39,.55);
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.review-quote{
+  margin: 0;
+  color: rgba(17,24,39,.86);
+  font-weight: 650;
+  line-height: 1.65;
+  position: relative;
+  padding-left: 10px;
+}
+
+.review-quote::before{
+  content:"“";
+  position:absolute;
+  left: -2px;
+  top: -6px;
+  font-size: 40px;
+  line-height: 1;
+  color: rgba(4,72,128,.18);
+  font-weight: 900;
+}
+
+/* Clamp to simulate “…More” */
+.review-quote.is-clamped{
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* EDIT HERE: number of lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.review-actions{
+  margin-top: auto;
+  display:flex;
+  gap: 12px;
+  align-items:center;
+}
+
+.review-more{
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  font-weight: 900;
+  color: var(--dark-blue, #044880);
+  border-bottom: 2px solid rgba(4,72,128,.25);
+}
+
+.review-more:hover{
+  border-bottom-color: var(--yellow, #F7C600);
+}
+
+/* 3) Responsive */
+@media (max-width: 980px){
+  .reviews-grid{
+    grid-template-columns: 1fr;
+  }
+  .review-form .field-row{
+    grid-template-columns: 1fr;
+  }
+}

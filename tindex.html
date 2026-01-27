@@ -1,0 +1,522 @@
+<!doctype html>
+<!-- =========================================================
+     File: index.html
+     Project: MASI Static Prototype (HTML/CSS first, WP later)
+     Purpose: Home page (FULL FILE)
+     Theme: Dark Blue #044880, Yellow #F7C600, Black, Grey
+     Notes:
+     - Sticky header + boxed content (container)
+     - Bootstrap 5.3 carousel for hero (fade + autoplay)
+     - Latest News uses clean cards
+     - Partners use click-to-flip cards (tiny JS)
+     - Services redesigned to match reference:
+         Left column = intro text
+         Right column = accordion list with + / × icon
+     ========================================================= -->
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MASI — Home</title>
+
+  <!-- Bootstrap 5.3 (required for carousel behavior) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Theme CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/typing.css">
+</head>
+
+<body>
+
+  <!-- =========================================================
+       HEADER (GLOBAL)
+       ========================================================= -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+
+      <!-- BRAND (EDIT HERE: logo + company name) -->
+      <a class="brand" href="index.html" aria-label="Go to homepage">
+        <img class="brand-logo" src="assets/img/logo.png" alt="MASI logo" />
+        <span class="brand-name">MASI Engineering &amp; Logistics B.V.</span>
+      </a>
+
+      <!-- NAVIGATION -->
+      <nav class="nav" aria-label="Main navigation">
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="navMenu">
+          <span class="sr-only">Toggle menu</span> ☰
+        </button>
+
+        <ul class="nav-menu" id="navMenu">
+          <li><a class="nav-link active" href="#home">Home</a></li>
+
+          <!-- NEWS MENU (EDIT HERE: years/months) -->
+          <li class="has-dropdown">
+            <a class="nav-link" href="news.html" aria-haspopup="true">News ▾</a>
+            <ul class="dropdown" aria-label="News submenu">
+              <li class="has-dropdown">
+                <a href="news.html?year=2026">2026 ▸</a>
+                <ul class="dropdown sub" aria-label="2026 months">
+                  <li><a href="news.html?year=2026&amp;month=01">January</a></li>
+                  <li><a href="news.html?year=2026&amp;month=02">February</a></li>
+                  <li><a href="news.html?year=2026&amp;month=03">March</a></li>
+                </ul>
+              </li>
+              <li class="has-dropdown">
+                <a href="news.html?year=2025">2025 ▸</a>
+                <ul class="dropdown sub" aria-label="2025 months">
+                  <li><a href="news.html?year=2025&amp;month=01">January</a></li>
+                  <li><a href="news.html?year=2025&amp;month=02">February</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+
+          <li><a class="nav-link" href="#partners">Our Partners</a></li>
+          <li><a class="nav-link" href="#services">Our Services</a></li>
+          <li><a class="nav-link" href="about.html">About Us</a></li>
+          <li><a class="nav-link" href="about.html#contact">Contact Us</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+<!-- ==================== HERO TYPING (TOP) ==================== -->
+<!-- EDIT HERE: Change headline and phrases in assets/js/typing.js -->
+<section class="masi-typing-hero">
+  <div class="container masi-typing-inner">
+    <h1 class="masi-typing-title">
+      Trusted Provider for<br>
+      <span id="typing-text" class="masi-typing-feature">CCTV Installations</span><span class="masi-typing-cursor" aria-hidden="true"></span>
+    </h1>
+  </div>
+</section>
+<!-- ==================== /HERO TYPING (TOP) ==================== -->
+
+
+
+<main>
+
+    <!-- =========================================================
+         HERO (Bootstrap Carousel)
+         ========================================================= -->
+    <section class="hero" id="home">
+      <div class="container hero-inner">
+        <div class="hero-carousel-wrap">
+
+          <div id="heroCarousel"
+               class="carousel slide carousel-fade"
+               data-bs-ride="carousel"
+               data-bs-interval="10000"
+               aria-label="Homepage highlights">
+
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="assets/img/slide1.jpeg" class="d-block w-100 hero-slide-img" alt="Slide 1">
+                <div class="carousel-caption hero-caption text-start">
+                  <h1 class="hero-title">Bridging Markets with Expertise</h1>
+                  <p class="hero-subtitle">Short intro line about products, services, and partnerships. Keep it tight and clear.</p>
+                  <a class="btn btn-primary" href="#services">Explore Services</a>
+                </div>
+              </div>
+
+              <div class="carousel-item">
+                <img src="assets/img/slide2.jpg" class="d-block w-100 hero-slide-img" alt="Slide 2">
+                <div class="carousel-caption hero-caption text-start">
+                  <h1 class="hero-title">Engineering &amp; Integration</h1>
+                  <p class="hero-subtitle">One short line describing the highlight for this slide.</p>
+                  <a class="btn btn-primary" href="services.html">Learn More</a>
+                </div>
+              </div>
+
+              <div class="carousel-item">
+                <img src="assets/img/slide3.jpg" class="d-block w-100 hero-slide-img" alt="Slide 3">
+                <div class="carousel-caption hero-caption text-start">
+                  <h1 class="hero-title">Sustainable Solutions</h1>
+                  <p class="hero-subtitle">Another short line. This can link to partners or a specific offering.</p>
+                  <a class="btn btn-primary" href="partners.html">Our Partners</a>
+                </div>
+              </div>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev" aria-label="Previous slide">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next" aria-label="Next slide">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         LATEST NEWS (Cards)
+         ========================================================= -->
+    <section class="section section-light" id="news">
+      <div class="container">
+
+        <div class="section-head">
+          <h2 class="section-title">Latest News</h2>
+          <a class="section-link" href="news.html">View all</a>
+        </div>
+
+        <div class="news-grid">
+
+          <article class="news-card">
+            <a class="news-media" href="article.html" aria-label="Read more: Article Title">
+              <img src="assets/img/news/news-1.jpg" alt="News image 1" loading="lazy">
+            </a>
+            <div class="news-body">
+              <div class="news-meta"><time datetime="2026-04-24">Apr 24, 2026</time></div>
+              <h3 class="news-title"><a href="article.html">Article Title</a></h3>
+              <p class="news-excerpt">A short excerpt (2–3 lines). Explain the value quickly and encourage the click.</p>
+              <div class="news-actions"><a class="news-readmore" href="article.html">Read More →</a></div>
+            </div>
+          </article>
+
+          <article class="news-card">
+            <a class="news-media" href="article.html" aria-label="Read more: Article Title">
+              <img src="assets/img/news/news-2.jpg" alt="News image 2" loading="lazy">
+            </a>
+            <div class="news-body">
+              <div class="news-meta"><time datetime="2026-04-10">Apr 10, 2026</time></div>
+              <h3 class="news-title"><a href="article.html">Article Title</a></h3>
+              <p class="news-excerpt">A short excerpt (2–3 lines). Highlight what happened and why it matters.</p>
+              <div class="news-actions"><a class="news-readmore" href="article.html">Read More →</a></div>
+            </div>
+          </article>
+
+          <article class="news-card">
+            <a class="news-media" href="article.html" aria-label="Read more: Article Title">
+              <img src="assets/img/news/news-3.jpg" alt="News image 3" loading="lazy">
+            </a>
+            <div class="news-body">
+              <div class="news-meta"><time datetime="2026-03-28">Mar 28, 2026</time></div>
+              <h3 class="news-title"><a href="article.html">Article Title</a></h3>
+              <p class="news-excerpt">A short excerpt (2–3 lines). Keep it readable and consistent across cards.</p>
+              <div class="news-actions"><a class="news-readmore" href="article.html">Read More →</a></div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         OUR PARTNERS (Click-to-flip)
+         ========================================================= -->
+    <section class="section section-blue" id="partners">
+      <div class="container">
+
+        <div class="section-head">
+          <h2 class="section-title section-title--light">Our Partners</h2>
+          <a class="section-link section-link--light" href="partners.html">View all</a>
+        </div>
+
+        <div class="partners-grid">
+
+          <article class="partner-flip" data-flip-card>
+            <button class="partner-flip__toggle" type="button" aria-expanded="false">
+              <span class="sr-only">Show partner details</span>
+              <div class="partner-flip__inner">
+                <div class="partner-flip__face partner-flip__front">
+                  <img class="partner-logo" src="assets/img/partners/partner-1.png" alt="Partner Name logo" loading="lazy">
+                </div>
+                <div class="partner-flip__face partner-flip__back">
+                  <h3 class="partner-name">Partner Name</h3>
+                  <p class="partner-summary">1–2 lines about the partner relationship. Longer text will clamp.</p>
+                  <a class="partner-more" href="partner.html">More →</a>
+                  <span class="partner-back-hint">Tap to close</span>
+                </div>
+              </div>
+            </button>
+          </article>
+
+          <article class="partner-flip" data-flip-card>
+            <button class="partner-flip__toggle" type="button" aria-expanded="false">
+              <span class="sr-only">Show partner details</span>
+              <div class="partner-flip__inner">
+                <div class="partner-flip__face partner-flip__front">
+                  <img class="partner-logo" src="assets/img/partners/partner-2.png" alt="Partner Name logo" loading="lazy">
+                </div>
+                <div class="partner-flip__face partner-flip__back">
+                  <h3 class="partner-name">Partner Name</h3>
+                  <p class="partner-summary">Short description for the partner. Keep it simple and clear.</p>
+                  <a class="partner-more" href="partner.html">More →</a>
+                  <span class="partner-back-hint">Tap to close</span>
+                </div>
+              </div>
+            </button>
+          </article>
+
+          <article class="partner-flip" data-flip-card>
+            <button class="partner-flip__toggle" type="button" aria-expanded="false">
+              <span class="sr-only">Show partner details</span>
+              <div class="partner-flip__inner">
+                <div class="partner-flip__face partner-flip__front">
+                  <img class="partner-logo" src="assets/img/partners/partner-3.png" alt="Partner Name logo" loading="lazy">
+                </div>
+                <div class="partner-flip__face partner-flip__back">
+                  <h3 class="partner-name">Partner Name</h3>
+                  <p class="partner-summary">Short description for the partner. Keep it simple and clear.</p>
+                  <a class="partner-more" href="partner.html">More →</a>
+                  <span class="partner-back-hint">Tap to close</span>
+                </div>
+              </div>
+            </button>
+          </article>
+
+          <article class="partner-flip" data-flip-card>
+            <button class="partner-flip__toggle" type="button" aria-expanded="false">
+              <span class="sr-only">Show partner details</span>
+              <div class="partner-flip__inner">
+                <div class="partner-flip__face partner-flip__front">
+                  <img class="partner-logo" src="assets/img/partners/partner-4.png" alt="Partner Name logo" loading="lazy">
+                </div>
+                <div class="partner-flip__face partner-flip__back">
+                  <h3 class="partner-name">Partner Name</h3>
+                  <p class="partner-summary">Short description for the partner. Keep it simple and clear.</p>
+                  <a class="partner-more" href="partner.html">More →</a>
+                  <span class="partner-back-hint">Tap to close</span>
+                </div>
+              </div>
+            </button>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         OUR SERVICES (Two-column: intro + accordion)
+         - Left: heading + paragraphs (static content)
+         - Right: accordion list (details/summary), + icon on right
+         - JS ensures only one is open at a time
+         ========================================================= -->
+    <section class="section section-light" id="services">
+      <div class="container">
+
+        <div class="section-head">
+          <h2 class="section-title">Our Services</h2>
+          <a class="section-link" href="services.html">View all</a>
+        </div>
+
+        <div class="services-split">
+
+          <!-- LEFT COLUMN (EDIT HERE: intro text) -->
+          <div class="services-intro">
+            <h3 class="services-intro__title">Solutions to suit any organisation</h3>
+            <p>
+              Every business has unique goals and requirements. That’s why we tailor our solutions to suit your needs.
+              We enhance our services with deep market insight and hands-on delivery.
+            </p>
+            <p>
+              Reliable, powerful, and scalable solutions create the ideal infrastructure for business growth.
+            </p>
+            <p>
+              No matter what happens in the future, we’re always in your corner — supporting you for the long term.
+            </p>
+          </div>
+
+          <!-- RIGHT COLUMN (EDIT HERE: service items) -->
+          <div class="services-accordion" data-services-accordion>
+
+            <details class="svc-item">
+              <summary class="svc-summary">
+                <span class="svc-title">Logistics &amp; Distribution</span>
+                <span class="svc-icon" aria-hidden="true"></span>
+              </summary>
+              <div class="svc-body">
+                <p class="svc-desc">Specializing in print media distribution, parcel delivery, and contracted fleet solutions.</p>
+                <ul class="svc-list">
+                  <li>Print media distribution (end-to-end)</li>
+                  <li>Parcel delivery operations</li>
+                  <li>Contracted fleet solutions</li>
+                </ul>
+                <a class="btn btn-outline" href="service-logistics.html">Read More</a>
+              </div>
+            </details>
+
+            <details class="svc-item">
+              <summary class="svc-summary">
+                <span class="svc-title">Engineering &amp; Integration</span>
+                <span class="svc-icon" aria-hidden="true"></span>
+              </summary>
+              <div class="svc-body">
+                <p class="svc-desc">Comprehensive technical solutions from media production to renewable energy systems.</p>
+                <ul class="svc-list">
+                  <li>Media production technical systems</li>
+                  <li>Engineering planning &amp; delivery</li>
+                  <li>Renewable energy systems integration</li>
+                </ul>
+                <a class="btn btn-outline" href="service-engineering.html">Read More</a>
+              </div>
+            </details>
+
+            <details class="svc-item">
+              <summary class="svc-summary">
+                <span class="svc-title">Media Solutions</span>
+                <span class="svc-icon" aria-hidden="true"></span>
+              </summary>
+              <div class="svc-body">
+                <p class="svc-desc">Offering studio design, mobile apps/streaming solutions, satellite services, and cloud integration.</p>
+                <ul class="svc-list">
+                  <li>Studio design &amp; build</li>
+                  <li>Mobile apps &amp; streaming solutions</li>
+                  <li>Satellite services &amp; cloud integration</li>
+                </ul>
+                <a class="btn btn-outline" href="service-media.html">Read More</a>
+              </div>
+            </details>
+
+            <details class="svc-item">
+              <summary class="svc-summary">
+                <span class="svc-title">Sustainable Tech</span>
+                <span class="svc-icon" aria-hidden="true"></span>
+              </summary>
+              <div class="svc-body">
+                <p class="svc-desc">Implementing EV charging hubs, solar integration, and project management for sustainable projects.</p>
+                <ul class="svc-list">
+                  <li>EV charging hubs implementation</li>
+                  <li>Solar integration projects</li>
+                  <li>Sustainable project management</li>
+                </ul>
+                <a class="btn btn-outline" href="service-sustainable.html">Read More</a>
+              </div>
+            </details>
+
+            <details class="svc-item">
+              <summary class="svc-summary">
+                <span class="svc-title">Management Services</span>
+                <span class="svc-icon" aria-hidden="true"></span>
+              </summary>
+              <div class="svc-body">
+                <p class="svc-desc">Expert oversight for ensuring efficiency in project execution spanning across logistics and technology.</p>
+                <ul class="svc-list">
+                  <li>Project oversight and governance</li>
+                  <li>Efficiency and delivery assurance</li>
+                  <li>Logistics + technology execution support</li>
+                </ul>
+                <a class="btn btn-outline" href="service-management.html">Read More</a>
+              </div>
+            </details>
+
+            <details class="svc-item">
+              <summary class="svc-summary">
+                <span class="svc-title">International Solutions</span>
+                <span class="svc-icon" aria-hidden="true"></span>
+              </summary>
+              <div class="svc-body">
+                <p class="svc-desc">Facilitating seamless technological integration across borders for optimal business solutions.</p>
+                <ul class="svc-list">
+                  <li>Cross-border technical integration</li>
+                  <li>Multi-region coordination</li>
+                  <li>Seamless deployment support</li>
+                </ul>
+                <a class="btn btn-outline" href="service-international.html">Read More</a>
+              </div>
+            </details>
+
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================
+       FOOTER (GLOBAL)
+       ========================================================= -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+
+      <div class="footer-col">
+        <h4 class="footer-title">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="partners.html">Our Partners</a></li>
+          <li><a href="services.html">Our Services</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="about.html#contact">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-title">Contact Info</h4>
+        <ul class="footer-contact">
+          <li><span class="footer-label">Address:</span> Dublin, Ireland</li>
+          <li><span class="footer-label">Phone:</span> +353 00 000 0000</li>
+          <li><span class="footer-label">Email:</span> info@masi.com</li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4 class="footer-title">Follow Us</h4>
+        <div class="social">
+          <a class="social-btn" href="#" aria-label="Facebook">f</a>
+          <a class="social-btn" href="#" aria-label="Twitter">t</a>
+          <a class="social-btn" href="#" aria-label="YouTube">▶</a>
+          <a class="social-btn" href="#" aria-label="Instagram">◎</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <small>© <span id="year">2026</span> MASI. All rights reserved.</small>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS bundle (required for carousel) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Tiny JS:
+       1) Partners click-to-flip toggle (does not block 'More' links)
+       2) Services accordion: one open at a time
+  -->
+  <script>
+    // 1) Partner flip cards
+    document.querySelectorAll('[data-flip-card]').forEach(card => {
+      const btn = card.querySelector('.partner-flip__toggle');
+      btn.addEventListener('click', (e) => {
+        if (e.target.closest('a')) return; // allow link click
+        const flipped = card.classList.toggle('is-flipped');
+        btn.setAttribute('aria-expanded', flipped ? 'true' : 'false');
+      });
+    });
+
+    // 2) Services accordion: one open at a time
+    document.querySelectorAll('[data-services-accordion]').forEach(group => {
+      const items = Array.from(group.querySelectorAll('details'));
+      items.forEach(item => {
+        item.addEventListener('toggle', () => {
+          if (!item.open) return;
+          items.forEach(other => {
+            if (other !== item) other.open = false;
+          });
+        });
+      });
+    });
+  </script>
+
+  <script src="assets/js/typing.js"></script>
+</body>
+</html>
