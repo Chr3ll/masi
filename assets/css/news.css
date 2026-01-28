@@ -1,0 +1,69 @@
+/* =========================================================
+   File: news.css
+   Purpose: News listing page
+   ========================================================= */
+
+.news-list{
+  display:flex;
+  flex-direction:column;
+  gap: 22px;
+}
+
+.news-row{
+  display:grid;
+  grid-template-columns: 260px 1fr;
+  gap: 20px;
+  background: #fff;
+  border-radius: 14px;
+  overflow:hidden;
+  box-shadow: 0 8px 24px rgba(0,0,0,.12);
+}
+
+.news-row img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.news-row-body{
+  padding: 18px 20px;
+}
+
+.news-row-body h2{
+  margin: 6px 0 10px;
+  font-size: 22px;
+}
+
+.news-row-body h2 a:hover{
+  color: #044880;
+  text-decoration: underline;
+}
+
+.news-row-body time{
+  font-weight: 700;
+  color: #6B7280;
+  font-size: 14px;
+}
+
+.news-row-body p{
+  color: #374151;
+  max-width: 65ch;
+}
+
+.news-readmore{
+  display:inline-block;
+  margin-top: 6px;
+  font-weight: 800;
+  color: #044880;
+  border-bottom: 2px solid rgba(4,72,128,.3);
+}
+
+.news-readmore:hover{
+  border-bottom-color:#F7C600;
+}
+
+@media (max-width: 768px){
+  .news-row{
+    grid-template-columns: 1fr;
+  }
+}
