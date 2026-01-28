@@ -1,0 +1,49 @@
+/* assets/css/burger.css
+   CSS-only mobile drawer nav (right anchored, slides left)
+   TEMP: hides News in mobile drawer
+*/
+
+.nav-checkbox{
+  position:absolute;
+  left:-9999px;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}
+
+@media (max-width: 640px){
+  .nav-menu{
+    display:block;
+    position: fixed;
+    top: var(--header-height);
+    right: 0;
+    width: 100vw;
+    height: calc(100vh - var(--header-height));
+    background: var(--dark-blue);
+    padding: 16px 16px 22px;
+    margin: 0;
+    border-top: 1px solid rgba(255,255,255,.14);
+    overflow-y: auto;
+    transform: translateX(110%);
+    transition: transform .28s ease;
+    z-index: 999;
+  }
+
+  .nav-checkbox:checked ~ .nav-menu{
+    transform: translateX(0);
+  }
+
+  .nav-link{
+    width: 100%;
+    justify-content: space-between;
+    color: rgba(255,255,255,.92);
+  }
+
+  .nav-link:hover{
+    color:#fff;
+    background: rgba(255,255,255,.08);
+  }
+
+  /* TEMP: Hide News dropdown in mobile drawer */
+  .nav-menu > li.has-dropdown{ display:none; }
+}

@@ -23,6 +23,7 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
 <!-- Theme CSS -->
 <link href="assets/css/style.css" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/burger.css">
 <link href="assets/css/partners.css" rel="stylesheet"/>
 <link href="assets/css/typing.css" rel="stylesheet"/>
 </link></head>
@@ -39,9 +40,11 @@
 </a>
 <!-- NAVIGATION -->
 <nav aria-label="Main navigation" class="nav">
-<button aria-controls="navMenu" aria-expanded="false" class="nav-toggle" type="button">
+<input class="nav-checkbox" type="checkbox" id="navToggle">
+
+<label class="nav-toggle" for="navToggle">
 <span class="sr-only">Toggle menu</span> ☰
-        </button>
+        </label>
 <ul class="nav-menu" id="navMenu">
 <li><a class="nav-link active" href="index.html#home">Home</a></li>
 <!-- NEWS MENU (EDIT HERE: years/months) -->
@@ -227,7 +230,7 @@
 </div>
 <div class="partner-card__side partner-card__back">
 <h3 class="partner-card__name">OpenAI</h3>
-<p class="partner-card__text">OpenAI is a prominent American artificial intelligence research company, founded in 2015 and based in San Francisco, dedicated to developing safe and beneficial Artificial General Intelligence (AGI) that positively impacts humanity. Known for creating popular generative AI tools like ChatGPT and DALL-E</p>
+<p class="partner-card__text">OpenAI is a prominent American artificial intelligence research company, founded in 2015 and based in San Francisco, dedicated to developing safe and beneficial Artificial General Intelligence (AGI) that positively impacts humanity. Known for creating popular generative AI tools like ChatGPT and DALL-E.</p>
 <a class="partner-card__more" href="partner-openai.html">Read more →</a>
 </div>
 </div>
